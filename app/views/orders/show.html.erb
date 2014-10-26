@@ -10,5 +10,24 @@
   <%= @order.sent %>
 </p>
 
+<p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_lines.each do |order_line| %>
+    <tr>
+      <td><%= order_line.product.name %></td>
+      <td><%= order_line.product.description %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
