@@ -69,6 +69,10 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :category_id)
+      par = params.require(:product).permit(:name, :description, :category_id)
+      if par[:category_id].is_a? String
+        par[:category_id] = (Category.find { |c| c.name.downcase == par[:category_id].downcase })[:id]
+      end
+      return par
     end
 end
