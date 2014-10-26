@@ -3,9 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Paidfor</th>
+      <th>Paid-For</th>
       <th>Sent</th>
       <th colspan="3"></th>
+      <th>Products</th>
     </tr>
   </thead>
 
@@ -17,6 +18,9 @@
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><ul><% order.order_lines.each do |order_line| %>
+          <li><%= order_line.product.name %></li>
+        <% end %></ul></td>
       </tr>
     <% end %>
   </tbody>
