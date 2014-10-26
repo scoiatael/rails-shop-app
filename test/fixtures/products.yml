@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  category_id: 
+  description: MyText
   category_id: 
 
 two:
   name: MyString
-  category_id: 
+  description: MyText
   category_id: 
