@@ -19,7 +19,7 @@
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><ul><% order.order_lines.each do |order_line| %>
-          <li><%= order_line.product.name %></li>
+          <li><%= order_line.product.name if order_line.product %></li>
         <% end %></ul></td>
       </tr>
     <% end %>

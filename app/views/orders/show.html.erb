@@ -22,8 +22,8 @@
   <tbody>
     <% @order.order_lines.each do |order_line| %>
     <tr>
-      <td><%= order_line.product.name %></td>
-      <td><%= order_line.product.description %></td>
+      <td><%= order_line.product.name if order_line.product %></td>
+      <td><%= order_line.product.description if order_line.product %></td>
     </tr>
     <% end %>
   </tbody>
